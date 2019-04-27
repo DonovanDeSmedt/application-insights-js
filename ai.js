@@ -1525,11 +1525,11 @@ var Microsoft;
             'use strict';
             var Operation = /** @class */ (function () {
                 function Operation() {
-                    if (this.hasCustomId) {
+                    if (!this.hasCustomId) {
                         this.id = ApplicationInsights.Util.newId();
-                        if (window && window.location && window.location.pathname) {
-                            this.name = window.location.pathname;
-                        }
+                    }
+                    if (window && window.location && window.location.pathname) {
+                        this.name = window.location.pathname;
                     }
                 }
                 /**
